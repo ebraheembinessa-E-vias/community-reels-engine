@@ -1,0 +1,20 @@
+{
+  "name": "community-reels-engine",
+  "version": "0.2.0",
+  "private": true,
+  "description": "A beginner-guided reel workshop: give the manual to your assistant, answer its questions, then review your reel.",
+  "license": "CC0-1.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "doctor": "hyperframes doctor",
+    "test": "python3 -m unittest discover -s tests -v"
+  },
+  "dependencies": {
+    "@fontsource/noto-sans-arabic": "5.3.0",
+    "gsap": "3.15.0",
+    "hyperframes": "0.8.58"
+  },
+  "author": "E.B.E - powered by E-VIAS"
+}

@@ -1,0 +1,11 @@
+Designed by E.B.E - powered by E-VIAS
+
+Open the companion folder with your coding assistant and give it this PDF.
+
+Copy this message:
+
+Read this manual and the companion asset folder. I am a beginner. Guide me one step at a time in my preferred language. Ask whether I have a recording or want a faceless reel from an idea. Ask one useful question at a time and handle the technical work for me. Show me the script or clean cut before adding visuals. Explain any upload or cost before using a provider.
+
+If the assistant cannot read the PDF, ask it to read docs/MANUAL.md and docs/ASSISTANT-PLAYBOOK.md.
+
+Do not have the folder? Download it from https://github.com/ebraheembinessa-E-vias/community-reels-engine (Code -> Download ZIP), or ask your assistant to download it for you.
