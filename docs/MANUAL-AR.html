@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Community Reels Manual — العربي</title>
+<style>
+  @page { size: 210mm 297mm; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #f4f3ec; }
+  :root { --paper:#f4f3ec; --ink:#18313b; --green:#275743; --line:#d0dbce; --card:#e5ecd9; --muted:#52655f; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "SF Arabic", "Geeza Pro", "Helvetica Neue", Helvetica, sans-serif; color: var(--ink); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .sheet { position: relative; width: 210mm; height: 297mm; overflow: hidden; padding: 31mm 17mm 21mm 17mm; background: var(--paper);
+    page-break-after: always; break-after: page; font-size: 12.4pt; line-height: 1.86; }
+  .sheet.dense { line-height: 1.72; }
+  .sheet.dense h2 { margin-top: 3.2mm; }
+  .sheet:last-child { page-break-after: auto; break-after: auto; }
+
+  /* the running header — mirrored from the English: E.B.E · powered by E-VIAS on the start side */
+  .running { position: absolute; top: 10.5mm; right: 17mm; left: 17mm; height: 7mm; border-bottom: .5pt solid var(--line); direction: rtl; }
+  .running .who { position: absolute; right: 0; top: 0; direction: ltr; font: 700 10pt "Helvetica Neue", Helvetica, sans-serif; color: var(--green); }
+  .running .who span { font-weight: 400; font-size: 8.5pt; margin-left: 2.6mm; }
+  .running .what { position: absolute; left: 0; top: .6mm; direction: ltr; font: 400 8.5pt "Helvetica Neue", Helvetica, sans-serif; color: var(--green); letter-spacing: .02em; }
+  .strap { font: 700 10pt -apple-system, "SF Arabic", "Geeza Pro", sans-serif; color: var(--green); margin: 0 0 2.5mm; }
+
+  /* the foot — credit on the start side, the page number on the end side */
+  .sheet-foot { position: absolute; bottom: 17mm; right: 17mm; left: 17mm; height: 0; border-top: .5pt solid var(--line); }
+  .brand { position: absolute; bottom: 10.5mm; right: 17mm; direction: ltr; font: 8pt "Helvetica Neue", Helvetica, sans-serif; color: var(--muted); }
+  .pagenum { position: absolute; bottom: 10.5mm; left: 17mm; direction: ltr; font: 8pt "Helvetica Neue", Helvetica, sans-serif; color: var(--muted); }
+
+  h1 { font-size: 28pt; line-height: 1.3; margin: 0 0 1mm; font-weight: 800; letter-spacing: 0; }
+  .sub { font-size: 13pt; color: var(--muted); margin: 0 0 6mm; line-height: 1.6; }
+  .credit { direction: ltr; text-align: right; font: 10pt "Helvetica Neue", Helvetica, sans-serif; margin: -2mm 0 4.5mm; }
+  h2 { font-size: 14pt; line-height: 1.5; margin: 4.2mm 0 1mm; font-weight: 700; color: var(--green); }
+  h2 .n { font: 700 11pt "Helvetica Neue", Helvetica, sans-serif; margin-left: 1.6mm; }
+  p { margin: 0 0 2.6mm; }
+  b { font-weight: 700; }
+  a { color: var(--green); text-decoration: underline; text-underline-offset: 2px; }
+  a.url { direction: ltr; unicode-bidi: embed; font-family: "Helvetica Neue", Helvetica, sans-serif; font-size: 11pt; }
+  .file { font-family: "SF Mono", Menlo, monospace; font-size: .86em; color: var(--green); }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: .86em; direction: ltr; unicode-bidi: embed; color: var(--green); }
+  .card { background: var(--card); border-radius: 3.2mm; padding: 4mm 5.2mm; margin: 3mm 0 3.6mm; }
+  .card p:last-child { margin-bottom: 0; }
+  .card .say { font-weight: 700; }
+  .card p.say-line { font-weight: 700; margin: 0 0 1mm; }
+  ul.checks { list-style: none; margin: 0 0 2mm; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.2mm 6mm; }
+  ul.checks li { position: relative; padding-right: 7mm; }
+  ul.checks li::before { content: ""; position: absolute; right: 0; top: 2.2mm; width: 3.6mm; height: 3.6mm; border: .8pt solid var(--green); border-radius: 1mm; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin: 3mm 0 3.6mm; }
+  .cards .c { background: #fbfaf5; border: .5pt solid var(--line); border-radius: 3.2mm; padding: 3.2mm 3.8mm; font-size: 11pt; line-height: 1.7; }
+  .cards .k { font: 700 8.5pt "Helvetica Neue", Helvetica, sans-serif; color: var(--green); direction: ltr; text-align: right; }
+  .cards .t { font-weight: 700; font-size: 12.2pt; margin: .6mm 0 .8mm; }
+  table { width: 100%; border-collapse: collapse; margin: 1.5mm 0 3.4mm; font-size: 11.6pt; line-height: 1.7; }
+  th { font-size: 8.8pt; color: var(--muted); font-weight: 600; text-align: right; padding: 0 2mm 1.4mm; }
+  td { padding: 2mm; border-top: .5pt solid var(--line); vertical-align: top; }
+  table.tight td { padding: 1.1mm 2mm; }
+  td.h { font-weight: 700; white-space: nowrap; color: var(--green); }
+  .label { font-size: 10.4pt; font-weight: 700; color: var(--green); margin: 3mm 0 1.4mm; }
+
+  /* the English the assistant executes — the first message, and pages 9-12 */
+  pre { direction: ltr; text-align: left; unicode-bidi: plaintext; white-space: pre-wrap; word-break: normal; overflow-wrap: anywhere; margin: 0; }
+  pre.msg { background: var(--card); border-radius: 3.2mm; padding: 4mm 5.2mm; margin: 0 0 3mm; font: 10.4pt/1.6 "Helvetica Neue", Helvetica, sans-serif; color: var(--ink); }
+  .en { direction: ltr; text-align: left; }
+  .en h1 { font-family: "Helvetica Neue", Helvetica, sans-serif; font-weight: 400; font-size: 28pt; letter-spacing: -.01em; }
+  pre.brief { font: 10.9pt/1.55 "Helvetica Neue", Helvetica, sans-serif; color: var(--ink); margin: 0 0 3.2mm; }
+  pre.brief.sub { font-size: 13pt; color: var(--muted); margin: 0 0 6mm; }
+  pre.brief.card { background: var(--card); border-radius: 3.2mm; padding: 4mm 5.2mm; margin: 1mm 0 4mm; }
+  pre.brief b { font-weight: 700; }
+  pre.code { background: var(--card); border-radius: 3.2mm; padding: 4mm 5.2mm; margin: 1mm 0 4mm; font: 8.2pt/1.6 "SF Mono", Menlo, Courier, monospace; color: var(--ink); overflow-wrap: normal; }
+</style>
+</head>
+<body>
+
+<!-- ============================ 01 · THE COVER ============================ -->
+<section class="sheet dense">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">لك انت · ما تحتاج تعرف مونتاج</div>
+    <h1>اول reel لك.</h1>
+    <p class="sub">انت عندك شي ببالك، والـagent يسوي لك المونتاج.</p>
+    <p class="credit">Designed by E.B.E - powered by E-VIAS</p>
+
+    <div class="card">
+      <p>مثل ما بالـreel: تكتب مونتاج، تاخذ الـPDF، وتروح توديه يا لـClaude Code او Codex على حسب اللي تستعمله، وتقول له: <b>جهز لي المونتاج agent.</b> هو راح يمشي معك خطوة بخطوة من اول نقطة، الى ان تطلع فيديوهات اللي انت تبيها. وطبعا ما راح يخليك تبدا من الصفر: فيه كذا template تقدر تستفيد منها.</p>
+      <p>كل اللي عليك: الـPDF هذا، والـfolder حق <b>Community Reels Engine</b>. ولا تحتاج تعرف كود ولا مونتاج.</p>
+    </div>
+
+    <div class="cards">
+      <div class="c"><div class="k">A</div><div class="t">عندك فيديو انت مصوره</div>من التلفون. الـagent يسوي cut للغلط والـpauses، وبعدين يضيف caption وvisuals. والـvoice مالك انت.</div>
+      <div class="c"><div class="k">B</div><div class="t">تبي reel بدون ما تطلع</div>اللي هو faceless. تبدا من شي ببالك بس. الـagent يسوي معك الـscript، ويسوي الـreel كامل. وما تحتاج script من عندك.</div>
+      <div class="c"><div class="k">+</div><div class="t">شنو عليك انت</div>تشوف الـscript والـpreview، وتقول له شنو زين وشنو لا. الـfiles والادوات عليه، مو عليك.</div>
+    </div>
+
+    <h2>شنو تحتاج قبل تبدا</h2>
+    <table>
+      <tr><td class="h">Claude Code او Codex</td><td>اللي راح يمشي معك، باللابتوب عندك</td></tr>
+      <tr><td class="h">الـfolder</td><td>مجاني من GitHub، والـlink بصفحة 2</td></tr>
+      <tr><td class="h">laptop</td><td>المونتاج كله عليه، والفيديو من التلفون</td></tr>
+      <tr><td class="h">الـAPI key</td><td>من Google، بس اذا محتاج. واول sample ما يحتاج API key</td></tr>
+    </table>
+
+    <h2>شلون تستعمل الـPDF هذا</h2>
+    <p>الـpages من 1 الى 8 لك انت. ومن 9 الى 12 حق Claude Code او Codex، فتحط له الـPDF كامل. وخل الـPDF داخل الـfolder: <b>الـfolder فيه الادوات، والـPDF يقول لك شلون تستعملها.</b></p>
+    <p>كل شي هني مجاني: تستعمله، تغير فيه، تبيعه، تحت CC0. تحط الـcredit؟ زين، بس مو لازم. والادوات الـthird‑party فيها terms خاص فيها.</p>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">01 / 12</div>
+</section>
+
+<!-- ============================ 02 · START A CONVERSATION ============================ -->
+<section class="sheet">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">لك انت · ما تحتاج تعرف مونتاج</div>
+    <h1>تبدا من هني.</h1>
+    <p class="sub">ثلاث خطوات، وما تحتاج تكتب كود.</p>
+
+    <h2><span class="n">1</span>تاخذ الـfolder</h2>
+    <p>الـfolder موجود هني: <a class="url" href="https://github.com/ebraheembinessa-E-vias/community-reels-engine">github.com/ebraheembinessa-E-vias/community-reels-engine</a></p>
+    <p>تفتح الـlink، تروح على <b>Code</b>، وتسوي <b>Download ZIP</b>. او قول للـagent يسويه لك. بعدها تفتح الـZIP بالـdesktop عندك، وتحط الـPDF هذا داخل الـfolder. المونتاج كله باللابتوب، والفيديو من التلفون.</p>
+
+    <h2><span class="n">2</span>تفتح Claude Code او Codex</h2>
+    <p>بعدها تفتح Claude Code او Codex بنفس الـfolder هذا، وتحط له الـPDF. واذا ما يقدر يشوف الـPDF، قول له يروح حق <bdi class="file" dir="ltr">docs/MANUAL.md</bdi> و<bdi class="file" dir="ltr">docs/ASSISTANT-PLAYBOOK.md</bdi> داخل الـfolder.</p>
+
+    <h2><span class="n">3</span>تكتب له اول message</h2>
+    <div class="label">تسوي copy للـmessage هذي كاملة، وتحطها له:</div>
+<pre class="msg">Read this manual and the companion asset folder. I am a beginner. Guide me one step at a time in my preferred language. Ask whether I have a recording or want a faceless reel from an idea. Ask one useful question at a time and handle the technical work for me. Show me the script or clean cut before adding visuals. Explain any upload or cost before using a provider.</pre>
+    <p>الـmessage بالـEnglish عشان الـagent يفهم كل شي فيها. وفيها انت تقول له يمشي معك باللغة اللي تبيها، <b>يعني بعدها تكتب له بالعربي عادي.</b></p>
+
+    <h2>شنو يصير بعدها؟</h2>
+    <p>اول شي راح يسألك عن الـreel مالك. تقدر تقول له: «عندي فيديو» او «ابي reel faceless» او «مو عارف شنو اسوي». ومو لازم يطلع لك commands واجد.</p>
+
+    <div class="card">
+      <p><b>عندك الـPDF بس؟</b> تسوي download للـfolder من الـlink اللي بخطوة 1، او قول للـagent يسويه لك. الـPDF بروحه ما يسوي install لاي شي. واذا الـapp عندك ما يقدر يشغل ادوات باللابتوب، قول له يسوي معاك project باللابتوب عندك.</p>
+    </div>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">02 / 12</div>
+</section>
+
+<!-- ============================ 03 · LET IT HANDLE SETUP ============================ -->
+<section class="sheet">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">لك انت · ما تحتاج تعرف مونتاج</div>
+    <h1>خله يسوي لك الـsetup كامل.</h1>
+    <p class="sub">انت عندك الـOK، والـAPI key مالك من Google اذا محتاج.</p>
+
+    <p>الـagent يشوف شنو عندك باللابتوب، يقول لك شنو محتاج، ويسوي الـinstall معاك. وقبل كل شي يقدر يوريك sample بدون API key، والـsample هذا تكلفته على الـAPI <b><bdi dir="ltr">$0</bdi></b>.</p>
+
+    <h2><span class="n">1</span>تروح لـGoogle AI Studio</h2>
+    <p>قول للـagent يمشي معك على <a href="https://aistudio.google.com/api-keys">صفحة الـAPI keys حق Google AI Studio</a>، بالـaccount مالك انت. وممكن Google يقول لك تسوي project او تاخذ واحد موجود.</p>
+
+    <h2><span class="n">2</span>تاخذ الـkey مالك</h2>
+    <p>الـAPI key عبارة عن key خاص فيك: الـfolder يستعمل فيه الموديل حق Google من الـaccount مالك. شوف الـbilling والـdata settings. وترى الاشتراك مالك بـCodex او Claude <b>ما يدفع</b> حق Google.</p>
+
+    <h2><span class="n">3</span>تحطه بمكان خاص</h2>
+    <p>الـagent يفتح لك مكان خاص باللابتوب، وتحط فيه الـkey. <b>مو بالـchat، ولا screenshot، ولا بمكان الناس تشوفه.</b> وبعدها يقول لك انه ينحفظ، بدون ما يطلع لك الـkey.</p>
+
+    <div class="card">
+      <p>قبل ما يروح اي شي لـGoogle، لازم الـagent يقول لك شنو الفيديو او الـscript اللي راح يروح، وكم التكلفة تقريبا. واذا عنده موافقتك من قبل على نفس الشغلة ونفس الـbudget، يتابع بدون ما يسألك مرة ثانية.</p>
+    </div>
+
+    <p>شنو موجود حق Google، والمجاني، والـprices، كلها تتغير. المونتاج والـrender باللابتوب مالك. وقبل اي voice‑over او visuals، لازم تعرف التكلفة، وهذي كلها مو لازم. والـsample اللي بالـfolder ما يحتاج شي زيادة.</p>
+
+    <h2>اذا صار شي</h2>
+    <p>قول له: <b>«شنو الشي الواحد اللي لازم اسويه الحين؟»</b> ولازم يقول لك شنو صار، مو يخليك جدام error ما تفهمه.</p>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">03 / 12</div>
+</section>
+
+<!-- ============================ 04 · FIRST, CLEAN YOUR RECORDING ============================ -->
+<section class="sheet">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">لك انت · ما تحتاج تعرف مونتاج</div>
+    <h1>اول شي، الفيديو اللي انت مصوره.</h1>
+    <p class="sub">الطريق A: الـvoice مالك انت.</p>
+
+    <h2>شنو تعطيه</h2>
+    <p>الفيديو، لمنو هو، والنقطة الواحدة اللي تبي الناس تطلع فيها. قول له شنو لازم يكون موجود. واذا ما تدري شنو لازم تشيل، قول له جذي.</p>
+
+    <h2>شنو يسوي</h2>
+    <p>ويفهم الفيديو كامل، يسوي cut للي تكرر وللـpauses، ويخلي اللي يوصل النقطة. وبكل cut يشوف الـaudio نفسه، عشان ما تنقطع اي كلمة. والفيديو الاول ما ينلمس.</p>
+
+    <h2>شنو تشوف</h2>
+    <p><b>preview</b> نظيف <b>قبل اي animation</b>، والـcaption صح. ويقول لك شنو شال وليش، بطريقة سهلة.</p>
+
+    <h2>شنو تشيك</h2>
+    <p>شغله مع الـaudio، وتشوف:</p>
+    <ul class="checks">
+      <li>البداية واضحة؟</li>
+      <li>الـcuts طبيعية؟</li>
+      <li>فيه كلمة مقطوعة؟</li>
+      <li>للحين هذا انت؟</li>
+      <li>الـnames والـtech words صح؟</li>
+    </ul>
+
+    <div class="card">
+      <p>قول له، مثلا:</p>
+      <p class="say-line">«الـcut اللي بالثانية 9 قوي.»</p>
+      <p class="say-line">«خل المثال حق العملاء.»</p>
+      <p class="say-line">«الـcaption هذا مو اللي قلته.»</p>
+    </div>
+
+    <p>واذا كل شي زين، قول له: <b>«الـcut والـcaption اوكي. كمل.»</b> والـagent ما يضيف اي شي على الفيديو الا بعد ما تشوف النسخة هذي نفسها. لان اوكي على فكرة <b>مو اوكي على شي ما شفته.</b></p>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">04 / 12</div>
+</section>
+
+<!-- ============================ 05 · THEN, MAKE IT CLEARER ============================ -->
+<section class="sheet">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">لك انت · ما تحتاج تعرف مونتاج</div>
+    <h1>بعدين، خله اوضح.</h1>
+    <p class="sub">الطريق A: خل الـvisuals توصل النقطة.</p>
+
+    <p>الـagent يسألك: شنو يخلي الناس تفهم؟ يقول لك اي style افضل، ويوريك preview قبل ما يسوي الـreel كامل.</p>
+
+    <h2>الـcaption</h2>
+    <p>نفس اللي تقوله، وبنفس الوقت. بدون غلط، وفيه مكان حق الـbuttons اللي بالتلفون. وقول له اي لغة او لهجة تبي.</p>
+
+    <h2>الـvisuals</h2>
+    <p>خطوات ورا بعض، او شغلتين جنب بعض، او list، او screenshot حقيقي، او صورة الـproduct. وكل visual لازم يوصل النقطة اللي تقولها، مو بس شكل.</p>
+
+    <h2>الـstyle مالك</h2>
+    <p>حط له الـcolors، والـlogo، والـscreenshots، او reference اذا عندك. واذا ما عندك، قول له يسوي لك style تبدا فيه. واذا وجهك جزء من الفيديو، لازم يكون واضح.</p>
+
+    <div class="card">
+      <p>تقدر تقول له:</p>
+      <p class="say-line">«خله هادي. حط الـscreenshot الحقيقي حقنا لما اشرح النتيجة. طلع الثلاث خطوات لما اقولها. ابي animation يفيد، وcaption ينقرا.»</p>
+    </div>
+
+    <p>الـagent ما يسوي proof من عنده، ولا logo اداة، ولا نتائج عملاء، ولا download انت ما تعرف عنه. واذا محتاج شي حقيقي، لازم يقول لك شنو هو وليش.</p>
+
+    <p>تشوف الـpreview مع الـaudio. اذا الـscript او الـcuts محتاج تعديل، ارجع للنسخة الاولى. واذا الـvisuals بس، قول له يسوي تعديل على الـvisuals.</p>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">05 / 12</div>
+</section>
+
+<!-- ============================ 06 · START WITH AN IDEA ============================ -->
+<section class="sheet">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">لك انت · ما تحتاج تعرف مونتاج</div>
+    <h1>تبدا من شي ببالك.</h1>
+    <p class="sub">الطريق B: بدون ما تطلع، اللي هو faceless.</p>
+
+    <div class="card">
+      <p>اول message ممكن تكون: <span class="say">«ابي reel faceless، وعندي فكرة بس.»</span> والـagent يمشي معك الى ان توصل لنقطة واحدة.</p>
+    </div>
+
+    <h2>شنو يسألك</h2>
+    <p>اول شي: الـreel لمنو؟ بعدين: شنو النقطة الواحدة؟ وبعدها: اي لغة، اي tone، كم ثانية، وشنو تبي الناس تسوي بعدها. <b>سؤال سؤال، مو form مرة واحدة.</b></p>
+    <p>واذا مو عارف، قول له يعطيك شي واحد تبدا فيه، ويقول لك ليش. ولازم يعرف كل اللي قلته له من قبل.</p>
+
+    <h2>الـscript والـscenes</h2>
+    <p>الـscript: بداية، والنقطة، ونهاية واضحة. ومع كل جزء يقول لك شنو راح يطلع بالشاشة وليش. قول له: خله نفس ما تسولف مع واحد. وتشوف الـscript قبل اي voice‑over او شي تدفع عليه.</p>
+
+    <h2>الـvoice</h2>
+    <p>الـvoice مالك انت، او voice‑over من اداة موجودة وعنده موافقتك عليها، او reel فيه text بس، بدون voice. يقول لك الطريقة وكم التكلفة. وانت تسمع الـvoice وتشوف كل كلمة. واذا text بس، تشوف الوقت.</p>
+
+    <h2>الـanimation</h2>
+    <p>يسوي كل شي على الـtiming حق الـvoice، او حق الـtext، ويوريك النتيجة. ما يحط caption بالتخمين، ولا يخلي المكان فاضي بدون سبب.</p>
+
+    <p>الـengine اللي بالـfolder ياخذ voice جاهز، او يسوي reel بدون voice من خطة. والـvoice‑over شي زيادة، ولازم موافقتك عليه بروحه، باداة موجودة عند الـagent. <b>وما يبدل الـvoice مالك بدون ما تدري.</b></p>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">06 / 12</div>
+</section>
+
+<!-- ============================ 07 · FIND YOUR STYLE. THEN REVIEW. ============================ -->
+<section class="sheet dense">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">لك انت · ما تحتاج تعرف مونتاج</div>
+    <h1>تاخذ الـstyle، وبعدين تشوف.</h1>
+    <p class="sub">الـreference يخلي الـagent يعرف شنو عجبك.</p>
+
+    <p>تقدر تحط له reel وتقول له: <span class="say">«عجبني الـpace، وشلون يوصل كل نقطة.»</span> والـreference decoder يحلل الـreel، ويطلع لك نسخة جديدة حق النقطة اللي تبيها انت.</p>
+
+    <div class="card">
+      <p class="say-line"><span style="font-weight:400">جرب: </span>«شنو يسوي الـreference هذا اول شي، وشلون يستعمل الـcaption، وشلون يروح من نقطة لنقطة؟ بعدين سو لي نسخة حق الناس اللي تشوف الـreels مالي. وقول لي شنو الـfiles اللي محتاجينها.»</p>
+    </div>
+
+    <h2>خمس templates تبدا فيها</h2>
+    <table class="tight">
+      <tr><td class="h">VOX</td><td>الـstyle حق الـdesigner نفسه: documentary على paper، والفيديو مالك مثل polaroid على desk</td></tr>
+      <tr><td class="h">Editorial</td><td>شرح هادي</td></tr>
+      <tr><td class="h">Signal</td><td>نقطة وحدة</td></tr>
+      <tr><td class="h">Diagram</td><td>خطوات ورا بعض</td></tr>
+      <tr><td class="h">Pulse</td><td>سلسلة faceless، والـsignal يمشي بين الخطوات على background dark</td></tr>
+    </table>
+    <p>تقدر تقول له يسوي preview. ومو لازم تعرف fonts، ولا تكتب animation بنفسك.</p>
+
+    <h2>تشوفه مثل الناس</h2>
+    <p>البداية واضحة من اول ثانية؟ فيه نقطة واحدة؟ الـcaption نفس الـvoice؟ الـtext واضح بالتلفون؟ الـvisuals حقيقية؟ والنهاية تقول للناس شي واحد يسوونه؟</p>
+
+    <div class="card">
+      <p class="say-line"><span style="font-weight:400">قول له شنو تبي بالضبط: </span>«خل اول ثلاث ثواني اوضح.» · «خل الـdiagram اكثر شوي.»</p>
+      <p class="say-line">«الـvoice‑over ناشف، خله ادفى.» · «خل الـscript نفسه، بس الـbackground اسهل.»</p>
+    </div>
+
+    <p>لما تقول اوكي، يعطيك الفيديو الاخير ويقول لك وين ينحفظ. ولازم يحط الـbrief وكل اللي تبيه بالـproject، عشان ترجع له بعدين.</p>
+    <p><b>انت اللي تحدد متى ووين تنزله.</b> الـengine ما ينزل شي بروحه، وما يضمن لك المشاهدات. واذا صار شي باداة، لازم الـagent يقول لك شنو خلص وشنو محتاج شغل.</p>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">07 / 12</div>
+</section>
+
+<!-- ============================ 08 · MAKE IT YOUR OWN ============================ -->
+<section class="sheet">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">لك انت · ما تحتاج تعرف مونتاج</div>
+    <h1>خله حقك.</h1>
+    <p class="credit" style="margin:0 0 5mm;color:var(--muted);font-size:12pt">Designed by E.B.E - powered by E-VIAS.</p>
+
+    <div class="card">
+      <p><b>تستعمله. تغير فيه. تشاركه. تبيعه.</b></p>
+    </div>
+
+    <p>الـPDF، والـcode، والـworkflows، والـtemplates، والـsamples، كلها تحت <b>CC0 1.0 Universal</b>، على حسب الـrights اللي عند الـdesigner. ما تدفع شي حق الـdesigner، ومو بس حق مشروعك انت.</p>
+
+    <h2>الـcredit زين، بس مو لازم</h2>
+    <p>مو لازم تحط watermark ولا credit على الـreels مالك. حطينا اسم الـdesigner بس عشان تعرف الـfolder من وين.</p>
+    <p>واذا حاب تحطه، هذا هو: <b><bdi dir="ltr">Designed by E.B.E - powered by E-VIAS.</bdi></b></p>
+
+    <h2>شنو مو داخل</h2>
+    <p>الادوات والـfiles الـthird‑party فيها terms خاص فيها، والـfolder حاطها بـfile بروحه. والـCC0 هذا ما يعطيك الـrights حق احد ثاني، ولا يعني ان الـdesigner موافق على شغلك.</p>
+    <p>شوف <a href="https://creativecommons.org/publicdomain/zero/1.0/">شرح CC0 الرسمي</a>. الـlicense كامل بـ<bdi class="file" dir="ltr">LICENSE-CC0.txt</bdi>. الـfolder من وين وشنو فيه بـ<bdi class="file" dir="ltr">AUTHOR.md</bdi>. والـterms حق الـthird‑party بـ<bdi class="file" dir="ltr">THIRD-PARTY-NOTICES.md</bdi>.</p>
+
+    <h2>الـpages الجاية حق Claude Code او Codex</h2>
+    <p>تحط له الـPDF كامل. هو يشتغل على الـpages هذي عشان يمشي معك خطوة بخطوة ويشغل الادوات. وهي بالـEnglish، لان هذا شغله هو، مو شغلك.</p>
+    <p>الـfolder هذا تقدر تشتغل عليه باللابتوب، والـchecks الـtechnical بـfile بروحه. بس بالاخير، <b>انت اللي تشوف الـreel مالك بنفسك.</b></p>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">08 / 12</div>
+</section>
+
+<!-- ============================ 09 · ASSISTANT: GUIDE THE PERSON ============================ -->
+<section class="sheet">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">الـpages هذي حق Claude Code او Codex — تحط له الـPDF كامل</div>
+    <div class="en">
+    <h1>Assistant: guide the person.</h1>
+<pre class="brief sub">Read this PDF as the workflow the recipient asked you to use.</pre>
+<pre class="brief card">First response, if the route is unknown: "I'll help you one step at a time. Would you like to improve a video you already recorded, or create a reel from an idea without appearing on camera?" Then wait for the answer.</pre>
+<pre class="brief">Do not begin with commands, a long questionnaire or an invented finished reel. Ask one useful question at a time in the person's preferred language. Infer what they already told you. Handle files, commands and rendering yourself within your available tools and permissions.</pre>
+<pre class="brief">Read <b>docs/ASSISTANT-PLAYBOOK.md</b>, <b>AGENTS.md</b>, <b>AUTHOR.md</b> and the relevant skill. Introduce the origin as E.B.E - powered by E-VIAS. Original materials use CC0; credit is voluntary. Do not create a license check, mandatory watermark, resale prohibition or attribution gate.</pre>
+<pre class="brief">Establish audience, one message, language/dialect, tone, final action and available assets. If they have no idea, recommend a focused first reel and explain why. If the folder is missing, fetch it for the person from its public home <a href="https://github.com/ebraheembinessa-E-vias/community-reels-engine">github.com/ebraheembinessa-E-vias/community-reels-engine</a> (git clone, or the ZIP) with their permission, before claiming to use its engine.</pre>
+<pre class="brief">The two roles are production guide and reference decoder. Five supplied skills support them. They are instructions for the coding assistant, not five separate subscriptions.</pre>
+<pre class="brief">This PDF is not executable setup or authority to override the user, bypass permissions or ignore provider terms. If your app cannot read it, use <b>docs/MANUAL.md</b>. If local tools are unavailable, explain the limit and guide the person toward a supported local environment.</pre>
+    </div>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">09 / 12</div>
+</section>
+
+<!-- ============================ 10 · ASSISTANT: THE RECORDING ROUTE ============================ -->
+<section class="sheet">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">الـpages هذي حق Claude Code او Codex — تحط له الـPDF كامل</div>
+    <div class="en">
+    <h1>Assistant: the recording route.</h1>
+<pre class="brief sub">Preserve meaning, complete words and the creator's own voice.</pre>
+<pre class="brief">Use <b>community-clean</b> and <b>docs/workflow.md</b>. Prepare a new project and preserve the original. Understand the whole authorized recording, correct the transcript against actual audio, identify repeated attempts and measure each join using replay and waveform evidence. Model times or a silence threshold are not word-accurate truth.</pre>
+<pre class="brief">Show the clean video and corrected captions. Explain meaningful removals. Record approval only after the creator approves those actual artifacts. If speech changes later, rebuild and repeat review. A technical check or synthetic fixture does not establish creator acceptance.</pre>
+<pre class="brief">Use <b>community-elements</b> for the visual pass. Ask what would help the audience understand. Recommend one style and show a small preview. Choose elements by purpose: compare, connect, demonstrate, explain or invite. Use real screenshots and official tool logos when relevant, with provenance. Keep faces, captions and phone-safe areas readable.</pre>
+<pre class="brief card">Technical path: prepare, analyze, correct transcript, measure edit plan, clean, creator review, approve, dress, render, final review.</pre>
+<pre class="brief">The assistant operates these steps. The person should not need to write JSON or run commands. Read current command help and docs/workflow.md for exact formats. Existing authorization for the same upload and budget remains valid.</pre>
+<pre class="brief">For mixed Arabic/English captions, preserve shaped Arabic phrases and intact Latin product names. Do not animate separate Arabic letters. Recheck the final word, entrances, holds and exits rather than inspecting only a cover frame.</pre>
+    </div>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">10 / 12</div>
+</section>
+
+<!-- ============================ 11 · ASSISTANT: THE FACELESS ROUTE ============================ -->
+<section class="sheet">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">الـpages هذي حق Claude Code او Codex — تحط له الـPDF كامل</div>
+    <div class="en">
+    <h1>Assistant: the faceless route.</h1>
+<pre class="brief sub">The person may arrive with no recording and only an idea.</pre>
+<pre class="brief">Use <b>docs/faceless.md</b>. Turn the interview into a brief and concise script: opening, useful body and one next action. Present a plain-language scene plan alongside it. Verify factual claims. Get script approval before narration or paid assets.</pre>
+<pre class="brief">Ask for a voice choice: their own recording, an authorized artificial narrator, or intentional silence. Use a capability actually available in their environment. Google TTS is separate from video analysis. Preview generated speech and verify every word. Do not silently replace a provider or clone a real person's voice.</pre>
+<pre class="brief">Measure actual narration and caption intervals; do not estimate onsets from word counts. For text-only, review reading time. Write the story plan yourself, with actual script approval and purposeful visuals. <b>story</b> imports narration or prepares silence; it does not generate a voice.</pre>
+<pre class="code">python3 reel.py story work/story.json --name my-story --audio work/voice.wav
+# Use --silent instead of --audio only when intentionally text-only.
+# After the person reviews and approves the master and captions:
+python3 reel.py approve my-story --by "Creator name"
+python3 reel.py dress my-story --style diagram --faceless
+python3 reel.py render my-story --style diagram --faceless</pre>
+<pre class="brief">The plain-background story master is an audio/text checkpoint before animation. Show it with its captions; do not describe it as a finished reel. Review the final animation at normal speed and fix empty visual gaps or mismatched narration.</pre>
+    </div>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">11 / 12</div>
+</section>
+
+<!-- ============================ 12 · ASSISTANT: SETUP AND DELIVERY ============================ -->
+<section class="sheet">
+  <div class="running"><div class="who">E.B.E<span>powered by E-VIAS</span></div><div class="what">COMMUNITY REELS MANUAL</div></div>
+  <div class="body">
+    <div class="strap">الـpages هذي حق Claude Code او Codex — تحط له الـPDF كامل</div>
+    <div class="en">
+    <h1>Assistant: setup and delivery.</h1>
+<pre class="brief sub">Handle complexity without hiding decisions that matter.</pre>
+<pre class="brief">Check the actual folder and tools. Install requirements within granted permissions. Use this package's private key setup. Do not search neighboring folders for credentials or print secrets. Explain which media/text goes to Google and the estimated cost. No silent paid retries or provider changes.</pre>
+<pre class="brief">Use <b>community-decode</b> for references. Separate observed pacing, framing and motion from an adaptation proposal. Unknown editing tools remain unknown. Use <b>community-eye</b> for an authorized hearing/visual audit, then verify its findings against the footage. Do not invent proof.</pre>
+<pre class="brief">Before delivery, check complete playback, wording, joins, entrances/exits, assets and the last word. Verify intended audio. Give the person the MP4, measured length, simple review link and unresolved issues. Save their brief, choices and next step in the project. Publish only on a separate explicit request.</pre>
+<pre class="brief card">If something is unavailable, explain the concrete limit and useful next step. A local transcript is a draft until checked by listening. Model review, local technical tests, creator acceptance and publication are different states. Never describe an unfinished step as passed.</pre>
+<pre class="brief">Read technical detail only when needed: <b>docs/ASSISTANT-PLAYBOOK.md</b>, <b>docs/workflow.md</b>, <b>docs/faceless.md</b>, <b>docs/gemini-setup.md</b> and <b>docs/verification.md</b>.</pre>
+<pre class="brief">Official references: <a href="https://learn.chatgpt.com/docs/agent-configuration/agents-md">Codex project instructions</a>, <a href="https://code.claude.com/docs/en/memory">Claude Code project instructions</a>, <a href="https://ai.google.dev/gemini-api/docs/speech-generation">Google speech generation</a>, <a href="https://ai.google.dev/gemini-api/docs/api-key">Google key setup</a>, <a href="https://hyperframes.app/docs/5-packages/cli">HyperFrames</a>. Verify current interface, provider terms and account access on the recipient's setup.</pre>
+    </div>
+  </div>
+  <div class="sheet-foot"></div>
+  <div class="brand">Designed by E.B.E - powered by E-VIAS</div>
+  <div class="pagenum">12 / 12</div>
+</section>
+
+</body>
+</html>

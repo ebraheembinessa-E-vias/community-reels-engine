@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1]
 TOP={'README.md','AGENTS.md','CLAUDE.md','START-HERE.html','THIRD-PARTY-NOTICES.md',
      'RELEASE.md','package.json','package-lock.json','reel.py','.gitignore','.env.example',
      'AUTHOR.md','LICENSE-CC0.txt','START-WITH-YOUR-ASSISTANT.txt',
-     'output/pdf/community-reels-guide.pdf'}
+     'output/pdf/community-reels-guide.pdf','output/pdf/community-reels-guide-ar.pdf'}
 DIRS={'.agents','reelkit','prompts','docs','templates','scripts','tests','examples'}
 EXT={'.md','.py','.html','.css','.js','.json','.svg','.png','.jpg','.woff2'}
 DEMO_VIDEOS={'editorial-demo.mp4','signal-demo.mp4','diagram-demo.mp4','faceless-demo.mp4','pulse-demo.mp4','vox-demo.mp4'}

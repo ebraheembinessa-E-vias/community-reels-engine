@@ -6,6 +6,8 @@
 
 Start with the **[Community Reels Manual](output/pdf/community-reels-guide.pdf)**. Give it to your own Codex or Claude Code together with this folder. You do not need to know how to code or edit.
 
+**Arabic edition:** [الدليل بالعربي (PDF)](output/pdf/community-reels-guide-ar.pdf) — the same manual in Gulf Arabic; its source is docs/MANUAL-AR.html.
+
 Your assistant should ask one useful question at a time and handle the technical work. You choose the message and review the result.
 
 ## Two ways to start
@@ -23,7 +25,7 @@ If it cannot read the PDF, ask it to read [the same manual as text](docs/MANUAL.
 
 | Included | Purpose |
 |---|---|
-| 12-page manual | Eight pages for you; four pages addressed to your assistant |
+| 12-page manual, in English and in Arabic | Eight pages for you; four pages addressed to your assistant |
 | Two production routes | Improve an existing recording, or develop a faceless reel from an idea |
 | Five agent skills | Guided workflow, cleaning, visual/hearing review, reference decoding and elements |
 | Five editable styles | VOX (the designer's own), Editorial, Signal, Diagram and Pulse (the faceless series) |
